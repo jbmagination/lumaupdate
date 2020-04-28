@@ -28,7 +28,7 @@ ReleaseInfo releaseGetLatestStable() {
 	release.versions.push_back(ReleaseVer{ "CITRA", "CITRA", "https://github.com/AuroraWright/Luma3DS/releases/download/v5.2/Luma3DSv5.2.7z", 143234 });
 #else
 
-	static const char* ReleaseURL = "https://api.github.com/repos/AuroraWright/Luma3DS/releases/latest";
+	static const char* ReleaseURL = "https://api.github.com/repos/jbmagination/Luma3DS/releases/latest";
 
 	jsmn_parser p = {};
 	jsmn_init(&p);
@@ -57,7 +57,7 @@ ReleaseInfo releaseGetLatestStable() {
 	for (int i = 0; i < r; i++) {
 		if (!namefound && jsoneq((const char*)apiReqData, &t[i], "tag_name") == 0) {
 			jsmntok_t val = t[i+1];
-			// Strip the "v" in front of the version name
+b			// Strip the "v" in front of the version name
 			if (apiReqData[val.start] == 'v') {
 				val.start += 1;
 			}
