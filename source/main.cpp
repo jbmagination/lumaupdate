@@ -349,7 +349,7 @@ static std::pair<bool, LatestUpdaterInfo> checkSelfUpdate(UpdaterInfo info) {
 	try {
 		newUpdater = updaterGetLatest();
 	} catch (const std::runtime_error& e) {
-		newUpdater = {"fallback", "http://206.189.183.58/lumaupdater.zip", "If you seeing this, it means lumaupdater will be downloaded from a fallback url.", true, 0};
+		newUpdater = {"fallback", "http://206.189.183.58/lumaupdater.zip", "If you're seeing this, it means LumaUpdater will be downloaded from a fallback URL.", true, 0};
 		logPrintf("Got error: %s\nWill try to update using a fallback url...\n", e.what());
 	}
 
